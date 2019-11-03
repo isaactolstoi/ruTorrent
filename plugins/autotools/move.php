@@ -19,23 +19,22 @@ function Debug( $str )
 
 
 //------------------------------------------------------------------------------
-function skip_move($files) 
-{
-	global $at;
-	$filter = $at->skip_move_for_files;
+function skip_move($files) {
+    	global $at;
+    	$filter = $at->skip_move_for_files;
 	if(strlen($filter)>0)
     	{
-		Debug("using filter:".$filter);
-		foreach($files as $file) 
-		{
-			if ( preg_match($filter.'u',$file)==1) 
+	    	Debug("using filter:".$filter);
+    		foreach($files as $file) {
+       			if ( preg_match($filter.'u',$file)==1)
 			{
-				return true;
+			    Debug("filter matched on '".$file."', not moving:" .implode(" | ",$files));
+		           return true;
 			}
-	    	}
+		}
 		Debug("filter: " . $filter . " did not match any files in" . implode(" | ",$files) .". end");
 	}
-	return(false);
+		return(false);
 }
 
 //------------------------------------------------------------------------------
