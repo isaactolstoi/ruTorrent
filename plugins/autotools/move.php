@@ -131,6 +131,7 @@ if( $at->enable_move && (@preg_match($at->automove_filter.'u',$label)==1) )
 		        			$dest_path.=addslash($label);
 			        	if($at->addName && ($name!=''))
 						$dest_path.=addslash($name);					
+
 					if(operationOnTorrentFiles($torrent,$base_path,$base_name,$is_multi,$dest_path,$fileop_type))
 					{
 //						if($fileop_type=="Move")

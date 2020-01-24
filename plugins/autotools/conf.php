@@ -4,4 +4,4 @@
 	$autowatch_interval = 300;
 
 	// set "true" to enable debug output
-	$autodebug_enabled = false;
+	$autodebug_enabled = true;

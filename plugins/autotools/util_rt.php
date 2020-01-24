@@ -184,6 +184,8 @@ function rtMoveFile( $src, $dst, $dbg = false )
 //------------------------------------------------------------------------------
 function rtOpFiles( $files, $src, $dst, $op, $dbg = false )
 {
+	rtDbg( __FUNCTION__, "start" );
+
 	// Check if source and destination directories are valid
 	if( !is_array( $files ) || $src == '' || $dst == '' )
 	{
@@ -220,7 +222,6 @@ function rtOpFiles( $files, $src, $dst, $op, $dbg = false )
 	{
 		$source = $src.$file;
 		$dest = $dst.$file;
-
 		if( !rtMkDir( dirname( $dest ), 0777 ) )
 		{
 			if( $dbg ) rtDbg( __FUNCTION__, "can't create ".dirname( $dest ) );
